@@ -1,17 +1,13 @@
-import { StatusBar } from "expo-status-bar";
-import { Button, SafeAreaView, StyleSheet, Text, View } from "react-native";
+
+import React from 'react';
+import { SafeAreaView, Text, Button, StyleSheet } from 'react-native';
 
 export default function HomePage({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
-      <View>
-        <Text>Hello React Native</Text>
-        <Button
-          title="About Page"
-          onPress={() => navigation.navigate("About")}
-        ></Button>
-        <StatusBar style="auto" />
-      </View>
+      <Text style={styles.text}>Welcome to the Home Page!</Text>
+      <Button title="Go to Second Page" onPress={() => navigation.navigate('Second')} />
+      <Button title="Go to Third Page" onPress={() => navigation.navigate('Third')} />
     </SafeAreaView>
   );
 }
@@ -19,9 +15,11 @@ export default function HomePage({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-    // paddingTop: 48,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 24,
+    marginBottom: 20,
   },
 });
